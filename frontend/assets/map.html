@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outbreak Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMxINTih52XHJXLGcjLUUVYIAEAMLfhxo"></script>
+</head>
+<body>
+    <div id="map" style="height: 600px;"></div>
+    <script>
+        fetch('http://localhost:8000/outbreaks')  // Your Python endpoint
+            .then(res => res.json())
+            .then(data => {
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: -1.2921, lng: 36.8219 },  // Nairobi
+                    zoom: 10
+                });
+                data.features.forEach(feature => {
+                    new google.maps.Circle({
+                        center: {
+                            lat: feature.geometry.coordinates[1],
+                            lng: feature.geometry.coordinates[0]
+                        },
+                        radius: feature.properties.severity * 5000,
+                        map: map,
+                        fillColor: "#FF0000"
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
