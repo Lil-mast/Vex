@@ -35,7 +35,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onBackToLanding }) => {
           )}
           <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
             <Zap className="w-10 h-10 text-blue-400" />
-            RadiationWatch AI
+            VEX
           </h1>
           <p className="text-gray-400 text-lg">
             Real-time radiation monitoring and outbreak detection system
@@ -170,7 +170,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onBackToLanding }) => {
         {/* Footer */}
         <div className="text-center py-6 border-t border-gray-700">
           <p className="text-gray-500 text-sm">
-            RadiationWatch AI © 2025 • Real-time radiation monitoring system
+            VEX © 2025 • Real-time radiation monitoring system
           </p>
         </div>
       </div>

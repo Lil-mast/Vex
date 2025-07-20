@@ -78,8 +78,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
                 <div className="absolute inset-0 w-16 h-16 bg-blue-400 rounded-full opacity-20 animate-pulse"></div>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-white">
-                RadiationWatch
-                <span className="text-blue-400 ml-2">AI</span>
+                VEX
               </h1>
             </div>
 
@@ -182,7 +181,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
       <div className="py-8 bg-gray-900 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-gray-500">
-            RadiationWatch AI © 2025 • Advanced radiation monitoring and detection system
+            VEX © 2025 • Advanced radiation monitoring and detection system
           </p>
         </div>
       </div>
