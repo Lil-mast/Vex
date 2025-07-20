@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { LandingPage } from './components/LandingPage';

@@ -1,16 +1,16 @@
-import React from 'react';
-import { 
-  Zap, 
-  Shield, 
-  AlertTriangle, 
-  Activity, 
-  MapPin, 
+import React from "react";
+import {
+  Zap,
+  Shield,
+  AlertTriangle,
+  Activity,
+  MapPin,
   Eye,
   ArrowRight,
   CheckCircle,
   Globe,
-  Clock
-} from 'lucide-react';
+  Clock,
+} from "lucide-react";
 
 interface LandingPageProps {
   onEnterApp: () => void;
@@ -21,40 +21,46 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
     {
       icon: Activity,
       title: "Real-Time Monitoring",
-      description: "Continuous radiation level tracking with live data feeds from multiple sensors across the region."
+      description:
+        "Continuous radiation level tracking with live data feeds from multiple sensors across the region.",
     },
     {
       icon: MapPin,
       title: "Interactive Heatmap",
-      description: "Visual representation of radiation levels with zoom and pan controls for detailed area analysis."
+      description:
+        "Visual representation of radiation levels with zoom and pan controls for detailed area analysis.",
     },
     {
       icon: AlertTriangle,
       title: "Instant Alerts",
-      description: "Immediate notifications when radiation levels exceed safe thresholds with severity classification."
+      description:
+        "Immediate notifications when radiation levels exceed safe thresholds with severity classification.",
     },
     {
       icon: Shield,
       title: "Risk Assessment",
-      description: "AI-powered risk level classification from safe to critical with actionable recommendations."
+      description:
+        "AI-powered risk level classification from safe to critical with actionable recommendations.",
     },
     {
       icon: Eye,
       title: "Advanced Analytics",
-      description: "Comprehensive statistics and trend analysis for informed decision making."
+      description:
+        "Comprehensive statistics and trend analysis for informed decision making.",
     },
     {
       icon: Globe,
       title: "Wide Coverage",
-      description: "Extensive sensor network providing comprehensive radiation monitoring across large areas."
-    }
+      description:
+        "Extensive sensor network providing comprehensive radiation monitoring across large areas.",
+    },
   ];
 
   const stats = [
     { value: "50+", label: "Active Sensors" },
     { value: "24/7", label: "Monitoring" },
     { value: "100km²", label: "Coverage Area" },
-    { value: "<3s", label: "Alert Time" }
+    { value: "<3s", label: "Alert Time" },
   ];
 
   return (
@@ -63,10 +69,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
       <div className="relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%),
-                             radial-gradient(circle at 75% 75%, #1d4ed8 0%, transparent 50%)`
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%),
+                             radial-gradient(circle at 75% 75%, #1d4ed8 0%, transparent 50%)`,
+            }}
+          ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-20">
@@ -77,29 +86,39 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
                 <Zap className="w-16 h-16 text-blue-400" />
                 <div className="absolute inset-0 w-16 h-16 bg-blue-400 rounded-full opacity-20 animate-pulse"></div>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white">
-                VEX
-              </h1>
+              <h1 className="text-5xl md:text-6xl font-bold text-white">VEX</h1>
             </div>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Advanced AI-powered radiation detection and outbreak monitoring system with 
-              real-time alerts and interactive visualization
+              Advanced AI-powered radiation detection and outbreak monitoring
+              system with real-time alerts and interactive visualization
             </p>
 
             {/* Status Indicator */}
             <div className="flex items-center justify-center gap-3 mb-12">
               <div className="flex items-center gap-2 bg-green-900 bg-opacity-50 px-4 py-2 rounded-full border border-green-500">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-300 text-sm font-medium">System Online</span>
+                <span className="text-green-300 text-sm font-medium">
+                  System Online
+                </span>
               </div>
               <div className="flex items-center gap-2 bg-blue-900 bg-opacity-50 px-4 py-2 rounded-full border border-blue-500">
                 <Clock className="w-4 h-4 text-blue-400" />
-                <span className="text-blue-300 text-sm font-medium">Live Monitoring Active</span>
+                <span className="text-blue-300 text-sm font-medium">
+                  Live Monitoring Active
+                </span>
               </div>
             </div>
-
+            <div className="mb-10">
+              <video
+                src="https://res.cloudinary.com/dt7jocfde/video/upload/vex_m5fj05.mkv"
+                controls
+                autoPlay
+                loop
+                className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+              />
+            </div>
             {/* CTA Button */}
             <button
               onClick={onEnterApp}
@@ -114,7 +133,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    {stat.value}
+                  </div>
                   <div className="text-gray-400 text-sm">{stat.label}</div>
                 </div>
               ))}
@@ -131,7 +152,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
               Advanced Radiation Monitoring Features
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Comprehensive radiation detection and analysis tools designed for maximum safety and awareness
+              Comprehensive radiation detection and analysis tools designed for
+              maximum safety and awareness
             </p>
           </div>
 
@@ -145,9 +167,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onEnterApp }) => {
                   <div className="w-12 h-12 bg-blue-600 bg-opacity-20 rounded-lg flex items-center justify-center group-hover:bg-opacity-30 transition-all duration-300">
                     <feature.icon className="w-6 h-6 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold text-white">
+                    {feature.title}
+                  </h3>
                 </div>
-                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-400 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
