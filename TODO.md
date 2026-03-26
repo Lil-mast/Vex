@@ -1,10 +1,11 @@
-# Vex README Rewrite Task Progress
+# Vex Frontend pnpm Switch Progress
 
-## TODO Steps from Plan
-- [x] Create TODO.md with step list ✅
-- [x] Rewrite README.md with detailed what/how/setup ✅
-- [x] Update TODO.md after README rewrite ✅
-- [ ] Test: Run uvicorn backend.app:app --reload
-- [ ] Improve DB config (optional .env)
-- [ ] Setup sample DB data (user action)
-- [x] Complete ✅
+## TODO Steps
+- [x] Confirm plan ✅
+- [x] Update TODO.md ✅
+- [x] cd frontend && del package-lock.json && pnpm install ✅
+- [x] Update README.md with pnpm instructions ✅
+- [x] Test: cd frontend && pnpm dev ✅
+- [x] Mark complete ✅
+
+**Frontend now uses pnpm! Run `cd frontend && pnpm dev` anytime.**

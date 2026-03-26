@@ -92,13 +92,32 @@ INSERT INTO outbreaks (location, severity) VALUES
 - Replace hardcoded `password="your_password"`, `dbname`, etc.
 - Better: Use `python-dotenv` for `.env` file (add to reqs if needed).
 
-### 4. Run the Server
-```bash
+### 4. Run Backend
+```cmd
 uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
 ```
-- Visit `http://localhost:8000` → Health check.
-- `http://localhost:8000/outbreaks` → GeoJSON data.
-- Open frontend: Place `index.html` in `frontend/`, access at `/`.
+- `http://localhost:8000` → Health check.
+- `http://localhost:8000/outbreaks` → GeoJSON.
+
+### 5. Run Frontend (pnpm + Vite)
+```cmd
+cd frontend
+pnpm install  # If not done
+pnpm dev
+```
+- Opens `http://localhost:5173` (Vite dev server).
+- Integrates with backend API.
+
+**Proxy**: Add to `frontend/vite.config.ts` for API calls:
+```ts
+server: {
+  proxy: {
+    '/api': 'http://localhost:8000'
+  }
+}
+```
+Usage: fetch('/api/outbreaks')
+
 
 ### 5. Frontend Example
 Create `frontend/index.html`:
