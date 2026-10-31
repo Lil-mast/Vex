@@ -1,0 +1,13 @@
+{
+  "name": "vex",
+  "version": "0.1.0",
+  "description": "Ebola Bundibugyo Outbreak Atlas",
+  "type": "module",
+  "scripts": {
+    "dev": "cd web && pnpm dev",
+    "build": "cd web && pnpm build",
+    "preview": "cd web && pnpm preview"
+  },
+  "devDependencies": {},
+  "workspaces": ["web"]
+}
