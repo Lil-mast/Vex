@@ -1,0 +1,16 @@
+[project]
+name = "vex-api"
+version = "0.1.0"
+description = "FastAPI backend for Vex"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "boto3",
+    "awswrangler",
+    "mangum"
+]
+
+[tool.uv]
+index-strategy = "default"
