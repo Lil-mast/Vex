@@ -8,6 +8,14 @@
     "build": "cd web && pnpm build",
     "preview": "cd web && pnpm preview"
   },
-  "devDependencies": {},
-  "workspaces": ["web"]
+  "workspaces": [
+    "web"
+  ],
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "d3-geo": "^3.1.1",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3",
+    "three": "^0.187.0"
+  }
 }

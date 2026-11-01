@@ -5,10 +5,10 @@ import logging
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from mangum import Mangum
 
 from app.exceptions import VexError
 from app.models import ErrorResponse, HealthResponse
+from app.routers import zones, countries, events, snapshots, quality, dates
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -17,8 +17,11 @@ logger = logging.getLogger(__name__)
 # Initialize FastAPI app
 app = FastAPI(
     title="Vex API",
-    description="Ebola Bundibugyo Outbreak Atlas API",
-    version="0.1.0"
+    description="Ebola Bundibugyo Outbreak Atlas — Apache Iceberg + Athena backend",
+    version="0.1.0",
+    openapi_url="/docs/openapi.json",
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
 
 # CORS middleware (adjust origins for production)
@@ -65,8 +68,12 @@ async def health():
     return HealthResponse(status="ok")
 
 
-# Placeholder for routers (will be included below)
-logger.info("Vex API initialized")
+# Include all routers
+app.include_router(zones.router)
+app.include_router(countries.router)
+app.include_router(events.router)
+app.include_router(snapshots.router)
+app.include_router(quality.router)
+app.include_router(dates.router)
 
-# Adapter used by the API Gateway Lambda integration.
-handler = Mangum(app, api_gateway_base_path="/api")
+logger.info("Vex API initialized with all routers")
