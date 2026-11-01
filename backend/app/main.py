@@ -5,6 +5,7 @@ import logging
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 
 from app.exceptions import VexError
 from app.models import ErrorResponse, HealthResponse
@@ -66,3 +67,6 @@ async def health():
 
 # Placeholder for routers (will be included below)
 logger.info("Vex API initialized")
+
+# Adapter used by the API Gateway Lambda integration.
+handler = Mangum(app, api_gateway_base_path="/api")
